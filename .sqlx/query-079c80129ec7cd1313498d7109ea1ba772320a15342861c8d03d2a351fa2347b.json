@@ -1,0 +1,29 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "UPDATE files SET deleted_at = now()\n         WHERE id = $1 AND owner_id = $2 AND deleted_at IS NULL\n         RETURNING object_key",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "object_key",
+        "type_info": "Text",
+        "origin": {
+          "Table": {
+            "table": "files",
+            "name": "object_key"
+          }
+        }
+      }
+    ],
+    "parameters": {
+      "Left": [
+        "Uuid",
+        "Uuid"
+      ]
+    },
+    "nullable": [
+      false
+    ]
+  },
+  "hash": "079c80129ec7cd1313498d7109ea1ba772320a15342861c8d03d2a351fa2347b"
+}

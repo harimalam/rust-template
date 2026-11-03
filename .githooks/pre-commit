@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+# Enable with: make hooks
+set -e
+echo "pre-commit: cargo fmt --check"
+cargo fmt --all -- --check
+echo "pre-commit: cargo clippy"
+SQLX_OFFLINE=true cargo clippy --all-targets --locked -- -D warnings

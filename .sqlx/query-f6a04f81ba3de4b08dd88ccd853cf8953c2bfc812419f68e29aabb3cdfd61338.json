@@ -1,0 +1,14 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "DELETE FROM notes WHERE deleted_at IS NOT NULL AND deleted_at < now() - make_interval(days => $1)",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Int4"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "f6a04f81ba3de4b08dd88ccd853cf8953c2bfc812419f68e29aabb3cdfd61338"
+}

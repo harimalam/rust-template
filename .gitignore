@@ -1,0 +1,9 @@
+/target
+.env
+.env.*
+!.env.example
+*.log
+coverage/
+lcov.info
+.idea/
+.vscode/

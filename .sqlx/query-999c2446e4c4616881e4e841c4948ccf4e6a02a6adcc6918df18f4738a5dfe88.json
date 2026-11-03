@@ -1,0 +1,18 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "INSERT INTO one_time_tokens (id, user_id, kind, token_hash, expires_at)\n         VALUES ($1, $2, $3::text::one_time_token_kind, $4, $5)",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Uuid",
+        "Uuid",
+        "Text",
+        "Bytea",
+        "Timestamptz"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "999c2446e4c4616881e4e841c4948ccf4e6a02a6adcc6918df18f4738a5dfe88"
+}

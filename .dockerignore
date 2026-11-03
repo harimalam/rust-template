@@ -1,0 +1,12 @@
+target
+.git
+.github
+.env
+.env.*
+!.env.example
+docs
+tests
+coverage
+*.md
+# The builder image already provides the toolchain; this file would make rustup download another.
+rust-toolchain.toml

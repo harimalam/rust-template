@@ -1,0 +1,29 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "UPDATE one_time_tokens SET used_at = now()\n         WHERE token_hash = $1 AND kind = $2::text::one_time_token_kind\n           AND used_at IS NULL AND expires_at > now()\n         RETURNING user_id",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "user_id",
+        "type_info": "Uuid",
+        "origin": {
+          "Table": {
+            "table": "one_time_tokens",
+            "name": "user_id"
+          }
+        }
+      }
+    ],
+    "parameters": {
+      "Left": [
+        "Bytea",
+        "Text"
+      ]
+    },
+    "nullable": [
+      false
+    ]
+  },
+  "hash": "32ed47714934955ce9518efb4a54d5824ed12770a6708d8d8a436c149c038a12"
+}
